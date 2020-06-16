@@ -1,7 +1,5 @@
 # import module 
 from app import *
-import sys
-sys.path.append('.')
 
 from tasks.add import add
 

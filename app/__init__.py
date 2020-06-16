@@ -17,15 +17,18 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
     
-    '''import system rule'''
+    
     # import module
     from app.api.testapi import testapi
     from app.api.test_add import test_add
     # register blueprint
     app.register_blueprint(testapi)
     app.register_blueprint(test_add)
-    '''import system rule'''
 
+
+    #######################################
+    ##define log config and create log folder
+    #######################################
     if os.path.isdir('log') == False:
         os.mkdir('log')
     if os.path.isfile('./log/flask.log') == False:

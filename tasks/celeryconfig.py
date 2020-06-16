@@ -19,7 +19,7 @@ from celery.schedules import crontab
 beat_schedule = {
     'printy-run every 10 seconds': {
         'task': 'printy',
-        'schedule': timedelta(seconds=10), #每分鐘執行一次
+        'schedule': timedelta(seconds=10), #每10秒執行一次
         'args': (8,2)
     }
 }
