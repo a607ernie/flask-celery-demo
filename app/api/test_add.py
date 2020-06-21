@@ -9,7 +9,7 @@ test_add = Blueprint('test_add', __name__)
 def test_add_m():
     try:
         res = add.delay(12,23)
-        return jsonify({"STATUS":res.state,"RESULT":res.get()})
+        return jsonify({"RESULT":res.get()})
     except Exception as e:
         current_app.logger.warning(e,exc_info=True)
         return jsonify({"msg":"add fail"})
