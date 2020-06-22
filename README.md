@@ -303,6 +303,9 @@ Flower 監控
 
 - 開啟新的terminal
 ```bash
+# 先進入python venv
+$ . venv/bin/activate
+# start flower
 $ flower -A celery_worker.celery --port=5555
 ```
 
@@ -314,7 +317,7 @@ http://localhost:5555/
 選擇Processed分頁，可以看到頁面一直在更新，不斷的接收任務的進度和結果
 
 
-到目前為止總共需要同時執行三個terminal
+到目前為止總共需要同時執行四個terminal
 - Flask
 - Celery worker
 - Celery beat
